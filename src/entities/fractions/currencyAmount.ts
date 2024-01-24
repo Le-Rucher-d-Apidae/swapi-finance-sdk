@@ -1,5 +1,6 @@
 import { currencyEquals } from '../token'
-import { Currency, CAVAX } from '../currency'
+// import { Currency, CAVAX } from '../currency'
+import { Currency, CMATIC } from '../currency'
 import invariant from 'tiny-invariant'
 import JSBI from 'jsbi'
 import _Big from 'big.js'
@@ -19,7 +20,8 @@ export class CurrencyAmount extends Fraction {
    * @param amount ether amount in wei
    */
   public static ether(amount: BigintIsh): CurrencyAmount {
-    return new CurrencyAmount(CAVAX, amount)
+    // return new CurrencyAmount(CAVAX, amount)
+    return new CurrencyAmount(CMATIC, amount)
   }
 
   // amount _must_ be raw, i.e. in the native representation
@@ -45,11 +47,7 @@ export class CurrencyAmount extends Fraction {
     return new CurrencyAmount(this.currency, JSBI.subtract(this.raw, other.raw))
   }
 
-  public toSignificant(
-    significantDigits: number = 6,
-    format?: object,
-    rounding: Rounding = Rounding.ROUND_DOWN
-  ): string {
+  public toSignificant(significantDigits = 6, format?: object, rounding: Rounding = Rounding.ROUND_DOWN): string {
     return super.toSignificant(significantDigits, format, rounding)
   }
 

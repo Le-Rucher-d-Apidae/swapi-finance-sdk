@@ -4,6 +4,13 @@ export { JSBI }
 export {
   BigintIsh,
   ChainId,
+  ChainLabel,
+  ChainExplorer,
+  RPC_URL,
+  POLYGON_MAINNET_HEX_CHAIN_ID,
+  LIQUIDITY_TOKEN_PRECISION,
+  LIQUIDITY_TOKEN_SYMBOL,
+  LIQUIDITY_TOKEN_NAME,
   TradeType,
   Rounding,
   FACTORY_ADDRESS,

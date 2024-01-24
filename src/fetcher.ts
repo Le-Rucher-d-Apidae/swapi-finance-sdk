@@ -3,15 +3,13 @@ import { getNetwork } from '@ethersproject/networks'
 import { getDefaultProvider } from '@ethersproject/providers'
 import { TokenAmount } from './entities/fractions/tokenAmount'
 import { Pair } from './entities/pair'
-import IBaguettePair from '@baguette-exchange/contracts/artifacts/contracts/baguette-core/BaguettePair.sol/BaguettePair.json'
+import IBaguettePair from '@swapi-finance/contracts-local/artifacts/contracts/swapi-core/BaguettePair.sol/BaguettePair.json'
 import invariant from 'tiny-invariant'
 import ERC20 from './abis/ERC20.json'
 import { ChainId } from './constants'
 import { Token } from './entities/token'
 
-let TOKEN_DECIMALS_CACHE: { [chainId: number]: { [address: string]: number } } = {
-
-}
+let TOKEN_DECIMALS_CACHE: { [chainId: number]: { [address: string]: number } } = {}
 
 /**
  * Contains methods for constructing instances of pairs and tokens from on-chain data.
@@ -20,6 +18,7 @@ export abstract class Fetcher {
   /**
    * Cannot be constructed.
    */
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   private constructor() {}
 
   /**

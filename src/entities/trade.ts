@@ -2,7 +2,8 @@ import invariant from 'tiny-invariant'
 
 import { ChainId, ONE, TradeType, ZERO } from '../constants'
 import { sortedInsert } from '../utils'
-import { Currency, CAVAX } from './currency'
+// import { Currency, CAVAX } from './currency'
+import { Currency, CMATIC } from './currency'
 import { CurrencyAmount } from './fractions/currencyAmount'
 import { Fraction } from './fractions/fraction'
 import { Percent } from './fractions/percent'
@@ -10,7 +11,8 @@ import { Price } from './fractions/price'
 import { TokenAmount } from './fractions/tokenAmount'
 import { Pair } from './pair'
 import { Route } from './route'
-import { currencyEquals, Token, WAVAX } from './token'
+// import { currencyEquals, Token, WAVAX } from './token'
+import { currencyEquals, Token, WMATIC } from './token'
 
 /**
  * Returns the percent difference between the mid price and the execution price, i.e. price impact.
@@ -89,13 +91,17 @@ export interface BestTradeOptions {
  */
 function wrappedAmount(currencyAmount: CurrencyAmount, chainId: ChainId): TokenAmount {
   if (currencyAmount instanceof TokenAmount) return currencyAmount
-  if (currencyAmount.currency === CAVAX) return new TokenAmount(WAVAX[chainId], currencyAmount.raw)
+  // if (currencyAmount.currency === CAVAX) return new TokenAmount(WAVAX[chainId], currencyAmount.raw)
+  // if (currencyAmount.currency === CAVAX) return new TokenAmount(WMATIC[chainId], currencyAmount.raw)
+  if (currencyAmount.currency === CMATIC) return new TokenAmount(WMATIC[chainId], currencyAmount.raw)
   invariant(false, 'CURRENCY')
 }
 
 function wrappedCurrency(currency: Currency, chainId: ChainId): Token {
   if (currency instanceof Token) return currency
-  if (currency === CAVAX) return WAVAX[chainId]
+  // if (currency === CAVAX) return WAVAX[chainId]
+  // if (currency === CAVAX) return WMATIC[chainId]
+  if (currency === CMATIC) return WMATIC[chainId]
   invariant(false, 'CURRENCY')
 }
 
@@ -181,13 +187,13 @@ export class Trade {
     this.inputAmount =
       tradeType === TradeType.EXACT_INPUT
         ? amount
-        : route.input === CAVAX
+        : route.input === CMATIC // : route.input === CAVAX
         ? CurrencyAmount.ether(amounts[0].raw)
         : amounts[0]
     this.outputAmount =
       tradeType === TradeType.EXACT_OUTPUT
         ? amount
-        : route.output === CAVAX
+        : route.output === CMATIC // : route.output === CAVAX
         ? CurrencyAmount.ether(amounts[amounts.length - 1].raw)
         : amounts[amounts.length - 1]
     this.executionPrice = new Price(
@@ -258,7 +264,7 @@ export class Trade {
     // used in recursion.
     currentPairs: Pair[] = [],
     originalAmountIn: CurrencyAmount = currencyAmountIn,
-    bestTrades: Trade[] = [],
+    bestTrades: Trade[] = []
   ): Trade[] {
     invariant(pairs.length > 0, 'PAIRS')
     invariant(maxHops > 0, 'MAX_HOPS')
@@ -284,7 +290,7 @@ export class Trade {
         ;[amountOut] = pair.getOutputAmount(amountIn, chainId)
       } catch (error) {
         // input too low
-        if (error.isInsufficientInputAmountError) {
+        if ((error as any).isInsufficientInputAmountError) {
           continue
         }
         throw error
@@ -373,7 +379,7 @@ export class Trade {
         ;[amountIn] = pair.getInputAmount(amountOut, chainId)
       } catch (error) {
         // not enough liquidity in this pair
-        if (error.isInsufficientReservesError) {
+        if ((error as any).isInsufficientReservesError) {
           continue
         }
         throw error
