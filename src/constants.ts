@@ -19,6 +19,14 @@ const POLYGON_MUMBAI_TESTNET_DEFAULT_RPC = 'https://rpc-mumbai.maticvigil.com'
 //   AVALANCHE = 43114,
 //   CRYPTOSEALS = 6942069,
 // }
+// TODO : import sdk constants
+// TODO : import sdk constants
+// TODO : import sdk constants
+// TODO : import sdk constants
+// TODO : import sdk constants
+// TODO : import sdk constants
+// TODO : import sdk constants
+// TODO : import sdk constants
 export const LIQUIDITY_TOKEN_PRECISION = 18
 export const LIQUIDITY_TOKEN_NAME = 'Baguette Liquidity'
 export const LIQUIDITY_TOKEN_SYMBOL = 'BGL'

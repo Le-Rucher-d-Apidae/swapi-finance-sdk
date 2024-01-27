@@ -2,9 +2,9 @@ import { ChainId } from '../constants'
 import invariant from 'tiny-invariant'
 
 // import { Currency, CAVAX } from './currency'
-import { Currency, CMATIC } from './currency'
+import { Currency, CURRENCY } from './currency'
 // import { Token, WAVAX } from './token'
-import { Token, WMATIC } from './token'
+import { Token, WCURRENCY } from './token'
 import { Pair } from './pair'
 import { Price } from './fractions/price'
 
@@ -23,17 +23,17 @@ export class Route {
     )
     invariant(
       (input instanceof Token && pairs[0].involvesToken(input)) ||
-        (input === CMATIC && pairs[0].involvesToken(WMATIC[pairs[0].chainId])),
+        (input === CURRENCY && pairs[0].involvesToken(WCURRENCY[pairs[0].chainId])),
       'INPUT'
     )
     invariant(
       typeof output === 'undefined' ||
         (output instanceof Token && pairs[pairs.length - 1].involvesToken(output)) ||
-        (output === CMATIC && pairs[pairs.length - 1].involvesToken(WMATIC[pairs[0].chainId])),
+        (output === CURRENCY && pairs[pairs.length - 1].involvesToken(WCURRENCY[pairs[0].chainId])),
       'OUTPUT'
     )
 
-    const path: Token[] = [input instanceof Token ? input : WMATIC[pairs[0].chainId]]
+    const path: Token[] = [input instanceof Token ? input : WCURRENCY[pairs[0].chainId]]
     for (const [i, pair] of pairs.entries()) {
       const currentInput = path[i]
       invariant(currentInput.equals(pair.token0) || currentInput.equals(pair.token1), 'PATH')

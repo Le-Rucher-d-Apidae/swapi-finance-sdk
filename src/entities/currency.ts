@@ -36,5 +36,8 @@ export class Currency {
 
 // const CAVAX = Currency.CAVAX
 // export { CAVAX }
+// const CMATIC = Currency.CMATIC
+// export { CMATIC }
+
 const CMATIC = Currency.CMATIC
-export { CMATIC }
+export { CMATIC as CURRENCY }

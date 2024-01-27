@@ -1,6 +1,6 @@
 import { currencyEquals } from '../token'
 // import { Currency, CAVAX } from '../currency'
-import { Currency, CMATIC } from '../currency'
+import { Currency, CURRENCY } from '../currency'
 import invariant from 'tiny-invariant'
 import JSBI from 'jsbi'
 import _Big from 'big.js'
@@ -21,7 +21,7 @@ export class CurrencyAmount extends Fraction {
    */
   public static ether(amount: BigintIsh): CurrencyAmount {
     // return new CurrencyAmount(CAVAX, amount)
-    return new CurrencyAmount(CMATIC, amount)
+    return new CurrencyAmount(CURRENCY, amount)
   }
 
   // amount _must_ be raw, i.e. in the native representation

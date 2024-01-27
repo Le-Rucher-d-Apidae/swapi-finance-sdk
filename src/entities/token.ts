@@ -78,7 +78,24 @@ export function currencyEquals(currencyA: Currency, currencyB: Currency): boolea
 //   )
 // }
 
-export const WMATIC = {
+// export const WMATIC = {
+//   [ChainId.MUMBAI]: new Token(
+//     ChainId.MUMBAI,
+//     '0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889', // WMATIC
+//     18,
+//     'WMATIC',
+//     'Wrapped MATIC'
+//   ),
+//   [ChainId.POLYGON]: new Token(
+//     ChainId.POLYGON,
+//     '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
+//     18,
+//     'WMATIC',
+//     'Wrapped MATIC' // WMATIC
+//   )
+// }
+
+export const WCURRENCY = {
   [ChainId.MUMBAI]: new Token(
     ChainId.MUMBAI,
     '0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889', // WMATIC
