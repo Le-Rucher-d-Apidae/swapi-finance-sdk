@@ -1,5 +1,5 @@
-# Baguette SDK
-This repo contains tools for developing with [Baguette](baguette.exchange).
+# Swapi SDK
+This repo contains tools for developing with [Swapi](https://www.swapi.finance/).
 
 ## Running
 This project uses standard npm and yarn workflows.
