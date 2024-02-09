@@ -44,10 +44,10 @@ export class Pair {
       }
     }
     // console.debug('PAIR_ADDRESS_CACHE', PAIR_ADDRESS_CACHE)
-    console.debug(
-      'PAIR_ADDRESS_CACHE[tokens[0].address][tokens[1].address]',
-      PAIR_ADDRESS_CACHE[tokens[0].address][tokens[1].address]
-    )
+    // console.debug(
+    //   'PAIR_ADDRESS_CACHE[tokens[0].address][tokens[1].address]',
+    //   PAIR_ADDRESS_CACHE[tokens[0].address][tokens[1].address]
+    // )
     return PAIR_ADDRESS_CACHE[tokens[0].address][tokens[1].address]
   }
 
