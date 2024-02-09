@@ -22,3 +22,6 @@ This project is available as an npm packege. Add to your project with `npm insta
 
 ## Attribution
 This code was adapted from this Uniswap repo: [uniswap-sdk](https://github.com/Uniswap/sdk).
+
+Publishing:
+  npm publish --access public
