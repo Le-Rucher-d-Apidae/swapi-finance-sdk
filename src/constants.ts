@@ -6,7 +6,7 @@ export type BigintIsh = JSBI | bigint | string
 const POLYGON_MAINNET_CHAIN_ID = 137
 const POLYGON_MUMBAI_TESTNET_CHAIN_ID = 80001
 
-export const POLYGON_MAINNET_HEX_CHAIN_ID = 0x89
+export const POLYGON_MAINNET_HEX_CHAIN_ID = '0x89' // 137 // keep it as string else 0x89 will be converted to 137 at build time
 
 const POLYGON_MAINNET_DEFAULT_EXPLORER_URL = 'https://polygonscan.com/'
 const POLYGON_MUMBAI_TESTNET_DEFAULT_EXPLORER_URL = 'https://mumbai.polygonscan.com/'
