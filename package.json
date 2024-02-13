@@ -1,7 +1,7 @@
 {
   "name": "@swapi-finance/sdk",
   "license": "MIT",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "🛠 An SDK for building applications on top of Swapi. 🐝",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -25,7 +25,8 @@
     "prepublishOnly": "tsdx build",
     "prepare": "tsdx build",
     "clean": "del-cli dist",
-    "publish": "npm publish --access public"
+    "publish": "npm publish --access public",
+    "PUBLISH": "npm run clean && npm run build && npm run publish"
   },
   "dependencies": {
     "@openzeppelin/cli": "^2.8.2",
@@ -37,7 +38,14 @@
     "tiny-warning": "^1.0.3",
     "toformat": "^2.0.0"
   },
-  "peerDependencies": {},
+  "peerDependencies": {
+    "@ethersproject/contracts": "^5.7.0",
+    "@ethersproject/json-wallets": "^5.7.0",
+    "@ethersproject/providers": "^5.7.2",
+    "@ethersproject/solidity": "^5.7.0",
+    "@ethersproject/units": "^5.7.0",
+    "@ethersproject/wallet": "^5.7.0"
+  },
   "devDependencies": {
     "@swapi-finance/contracts": "^0.0.1",
     "@types/big.js": "^4.0.5",
