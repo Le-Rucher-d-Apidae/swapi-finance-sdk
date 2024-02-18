@@ -2074,11 +2074,12 @@
   dependencies:
     antlr4ts "^0.5.0-alpha.4"
 
-"@swapi-finance/contracts@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@swapi-finance/contracts/-/contracts-0.0.1.tgz#49b5ccb0ae4dc8a3db3cc34463ff72d80f140263"
-  integrity sha512-kvjlf7+TDP5YM7fM4NBfOxqdOeyKW+9oFTg+JpYGroK3x+qe51noYkAQPF64ru3TLtws9iCjvhbfPlIFo8rrvA==
+"@swapi-finance/contracts@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@swapi-finance/contracts/-/contracts-0.0.3.tgz#a86ac576a691bf5219efd9940b041daf4d9ce8e7"
+  integrity sha512-NyTDtKBb2myUsiZAisn0w9vpljeCMk6SP3DM4LQYl+VNEoMJxdM5bgn+Pppe6TKzmoGqA6SeW8yCbyOLJIEL2Q==
   dependencies:
+    "@uniswap/v2-core" "^1.0.1"
     abi-decoder "^2.4.0"
     base-58 "0.0.1"
 
@@ -2445,6 +2446,11 @@
     jsbi "^3.1.4"
     tiny-invariant "^1.1.0"
     toformat "^2.0.0"
+
+"@uniswap/v2-core@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@uniswap/v2-core/-/v2-core-1.0.1.tgz#af8f508bf183204779938969e2e54043e147d425"
+  integrity sha512-MtybtkUPSyysqLY2U210NBDeCHX+ltHt3oADGdjqoThZaFRDKwM6k1Nb3F0A3hk5hwuQvytFWhrWHOEq6nVJ8Q==
 
 "@uniswap/v2-sdk@^4.1.0":
   version "4.1.0"

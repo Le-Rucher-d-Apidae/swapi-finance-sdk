@@ -3,9 +3,13 @@ import { getNetwork } from '@ethersproject/networks'
 import { getDefaultProvider } from '@ethersproject/providers'
 import { TokenAmount } from './entities/fractions/tokenAmount'
 import { Pair } from './entities/pair'
-import IBaguettePair from '@swapi-finance/contracts/artifacts/contracts/swapi-core/BaguettePair.sol/BaguettePair.json'
+// import IBaguettePair from '@swapi-finance/contracts/artifacts/contracts/swapi-core/BaguettePair.sol/BaguettePair.json'
+import UniswapV2Pair from '@uniswap/v2-core/build/UniswapV2Pair.json'
+
 import invariant from 'tiny-invariant'
-import ERC20 from './abis/ERC20.json'
+// import ERC20 from './abis/ERC20.json'
+import { abi as ERC20} from '@uniswap/v2-core/build/IERC20.json'
+
 import { ChainId } from './constants'
 import { Token } from './entities/token'
 
@@ -65,7 +69,7 @@ export abstract class Fetcher {
   ): Promise<Pair> {
     invariant(tokenA.chainId === tokenB.chainId, 'CHAIN_ID')
     const address = Pair.getAddress(tokenA, tokenB, tokenA.chainId)
-    const [reserves0, reserves1] = await new Contract(address, IBaguettePair.abi, provider).getReserves()
+    const [reserves0, reserves1] = await new Contract(address, UniswapV2Pair.abi, provider).getReserves()
     const balances = tokenA.sortsBefore(tokenB) ? [reserves0, reserves1] : [reserves1, reserves0]
     return new Pair(new TokenAmount(tokenA, balances[0]), new TokenAmount(tokenB, balances[1]), tokenA.chainId)
   }
