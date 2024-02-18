@@ -21,8 +21,8 @@ const POLYGON_MAINNET_DEFAULT_RPC = 'https://polygon-rpc.com'
 const POLYGON_MUMBAI_TESTNET_DEFAULT_RPC = 'https://rpc-mumbai.maticvigil.com'
 
 export const LIQUIDITY_TOKEN_PRECISION = 18
-export const LIQUIDITY_TOKEN_NAME = 'UNI-V2'
-export const LIQUIDITY_TOKEN_SYMBOL = 'Uniswap V2'
+export const LIQUIDITY_TOKEN_NAME = 'Uniswap V2'
+export const LIQUIDITY_TOKEN_SYMBOL = 'UNI-V2'
 
 export enum ChainId {
   MUMBAI = POLYGON_MUMBAI_TESTNET_CHAIN_ID,

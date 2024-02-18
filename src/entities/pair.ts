@@ -15,7 +15,9 @@ import {
   FIVE,
   _997,
   _1000,
-  ChainId
+  ChainId,
+  LIQUIDITY_TOKEN_NAME,
+  LIQUIDITY_TOKEN_SYMBOL
 } from '../constants'
 import { sqrt, parseBigintIsh } from '../utils'
 import { InsufficientReservesError, InsufficientInputAmountError } from '../errors'
@@ -43,11 +45,6 @@ export class Pair {
         }
       }
     }
-    // console.debug('PAIR_ADDRESS_CACHE', PAIR_ADDRESS_CACHE)
-    // console.debug(
-    //   'PAIR_ADDRESS_CACHE[tokens[0].address][tokens[1].address]',
-    //   PAIR_ADDRESS_CACHE[tokens[0].address][tokens[1].address]
-    // )
     return PAIR_ADDRESS_CACHE[tokens[0].address][tokens[1].address]
   }
 
@@ -59,8 +56,10 @@ export class Pair {
       tokenAmounts[0].token.chainId,
       Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token, chainId),
       18,
-      'AXP',
-      'avaXwap'
+      // 'AXP',
+      // 'avaXwap'
+      LIQUIDITY_TOKEN_SYMBOL,
+      LIQUIDITY_TOKEN_NAME
     )
     this.tokenAmounts = tokenAmounts as [TokenAmount, TokenAmount]
   }
