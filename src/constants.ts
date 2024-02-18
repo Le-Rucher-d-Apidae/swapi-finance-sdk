@@ -66,12 +66,12 @@ export enum Rounding {
 }
 
 export const FACTORY_ADDRESS_MAP: { [chainId in ChainId]: string } = {
-  [ChainId.MUMBAI]: '0x15a34fd98dbf1c0116bdf740d501f735fca2891b', // Polygon Mumbai Testnet Uniswap v2 factory
-  [ChainId.POLYGON]: UNIV2_FACTORY_ADDRESS_MAP[ChainId.POLYGON] // Polygon mainnet Uniswap v2 factory
+  [ChainId.MUMBAI]: '0xf6039D535C13014C6Fd48051277C70439d085c6d', // Polygon Mumbai Testnet UniswapV2FactoryTest address
+  [ChainId.POLYGON]: UNIV2_FACTORY_ADDRESS_MAP[ChainId.POLYGON] // Polygon mainnet Uniswap v2 factory address
 }
 
 export const INIT_CODE_HASH_MAP: { [chainId in ChainId]: string } = {
-  [ChainId.MUMBAI]: '0xce77f6bcd5997f0c469e2c41b88b633b4a59edecc2ff41ee9559c5e17484a70b', // TODO: update this !
+  [ChainId.MUMBAI]: '0x5a2dc30108940dd053e5fe06fe4deb55d420828f787d508920ac29e08aed3ad9', // Polygon Mumbai Testnet UniswapV2FactoryTest init code hash
   [ChainId.POLYGON]: UNIV2_INIT_CODE_HASH
 }
 
