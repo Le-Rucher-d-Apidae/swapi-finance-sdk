@@ -10,9 +10,9 @@ export type BigintIsh = JSBI | bigint | string
 const POLYGON_MAINNET_CHAIN_ID = 137
 const POLYGON_MUMBAI_TESTNET_CHAIN_ID = 80001
 
-// keep HEX_CHAIN_ID as string else it will be converted to int at build time
-export const POLYGON_MUMBAI_TESTNET_HEX_CHAIN_ID = '0x13881' // 80001
-export const POLYGON_MAINNET_HEX_CHAIN_ID = '0x89' // 137
+// keep HEX_CHAIN_ID_MAP as string else it will be converted to int at build time
+const POLYGON_MUMBAI_TESTNET_HEX_CHAIN_ID_MAP = '0x13881' // 80001
+const POLYGON_MAINNET_HEX_CHAIN_ID_MAP = '0x89' // 137
 
 const POLYGON_MAINNET_DEFAULT_EXPLORER_URL = 'https://polygonscan.com/'
 const POLYGON_MUMBAI_TESTNET_DEFAULT_EXPLORER_URL = 'https://mumbai.polygonscan.com/'
@@ -29,24 +29,31 @@ export enum ChainId {
   POLYGON = POLYGON_MAINNET_CHAIN_ID
 }
 
-export const CHAIN_LABEL: { [chainId in ChainId]: string } = {
+export const CHAIN_LABEL_MAP: { [chainId in ChainId]: string } = {
   [ChainId.MUMBAI]: 'Polygon Mumbai Testnet',
   [ChainId.POLYGON]: 'Polygon'
 }
 
-export const HEX_CHAIN_ID: { [chainId in ChainId]: string } = {
-  [ChainId.MUMBAI]: POLYGON_MUMBAI_TESTNET_HEX_CHAIN_ID,
-  [ChainId.POLYGON]: POLYGON_MAINNET_HEX_CHAIN_ID
+export const HEX_CHAIN_ID_MAP: { [chainId in ChainId]: string } = {
+  [ChainId.MUMBAI]: POLYGON_MUMBAI_TESTNET_HEX_CHAIN_ID_MAP,
+  [ChainId.POLYGON]: POLYGON_MAINNET_HEX_CHAIN_ID_MAP
 }
 
-export const CHAIN_EXPLORER: { [chainId in ChainId]: string } = {
+export const CHAIN_EXPLORER_MAP: { [chainId in ChainId]: string } = {
   [ChainId.MUMBAI]: POLYGON_MUMBAI_TESTNET_DEFAULT_EXPLORER_URL,
   [ChainId.POLYGON]: POLYGON_MAINNET_DEFAULT_EXPLORER_URL
 }
-export const RPC_URL: { [chainId in ChainId]: string } = {
+export const RPC_URL_MAP: { [chainId in ChainId]: string } = {
   [ChainId.MUMBAI]: POLYGON_MUMBAI_TESTNET_DEFAULT_RPC,
   [ChainId.POLYGON]: POLYGON_MAINNET_DEFAULT_RPC
 }
+
+export const MULTICALL_NETWORKS_MAP: { [chainId in ChainId]: string } = {
+  [ChainId.MUMBAI]: '0xe9939e7Ea7D7fb619Ac57f648Da7B1D425832631',
+  [ChainId.POLYGON]: '0x275617327c958bD06b5D6b871E7f491D76113dd8'
+}
+
+
 export enum TradeType {
   EXACT_INPUT,
   EXACT_OUTPUT
@@ -58,12 +65,12 @@ export enum Rounding {
   ROUND_UP
 }
 
-export const FACTORY_ADDRESS: { [chainId in ChainId]: string } = {
+export const FACTORY_ADDRESS_MAP: { [chainId in ChainId]: string } = {
   [ChainId.MUMBAI]: '0x15a34fd98dbf1c0116bdf740d501f735fca2891b', // Polygon Mumbai Testnet Uniswap v2 factory
   [ChainId.POLYGON]: UNIV2_FACTORY_ADDRESS_MAP[ChainId.POLYGON] // Polygon mainnet Uniswap v2 factory
 }
 
-export const INIT_CODE_HASH: { [chainId in ChainId]: string } = {
+export const INIT_CODE_HASH_MAP: { [chainId in ChainId]: string } = {
   [ChainId.MUMBAI]: '0xce77f6bcd5997f0c469e2c41b88b633b4a59edecc2ff41ee9559c5e17484a70b', // TODO: update this !
   [ChainId.POLYGON]: UNIV2_INIT_CODE_HASH
 }
