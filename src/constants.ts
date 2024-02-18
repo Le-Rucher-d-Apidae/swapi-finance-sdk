@@ -1,4 +1,8 @@
 import JSBI from 'jsbi'
+import {
+  INIT_CODE_HASH as UNIV2_INIT_CODE_HASH,
+  FACTORY_ADDRESS_MAP as UNIV2_FACTORY_ADDRESS_MAP
+} from '@uniswap/v2-sdk'
 
 // exports for external consumption
 export type BigintIsh = JSBI | bigint | string
@@ -6,7 +10,9 @@ export type BigintIsh = JSBI | bigint | string
 const POLYGON_MAINNET_CHAIN_ID = 137
 const POLYGON_MUMBAI_TESTNET_CHAIN_ID = 80001
 
-export const POLYGON_MAINNET_HEX_CHAIN_ID = '0x89' // 137 // keep it as string else 0x89 will be converted to 137 at build time
+// keep HEX_CHAIN_ID as string else it will be converted to int at build time
+export const POLYGON_MUMBAI_TESTNET_HEX_CHAIN_ID = '0x13881' // 80001
+export const POLYGON_MAINNET_HEX_CHAIN_ID = '0x89' // 137
 
 const POLYGON_MAINNET_DEFAULT_EXPLORER_URL = 'https://polygonscan.com/'
 const POLYGON_MUMBAI_TESTNET_DEFAULT_EXPLORER_URL = 'https://mumbai.polygonscan.com/'
@@ -15,20 +21,25 @@ const POLYGON_MAINNET_DEFAULT_RPC = 'https://polygon-rpc.com'
 const POLYGON_MUMBAI_TESTNET_DEFAULT_RPC = 'https://rpc-mumbai.maticvigil.com'
 
 export const LIQUIDITY_TOKEN_PRECISION = 18
-export const LIQUIDITY_TOKEN_NAME = 'Baguette Liquidity'
-export const LIQUIDITY_TOKEN_SYMBOL = 'BGL'
+export const LIQUIDITY_TOKEN_NAME = 'UNI-V2'
+export const LIQUIDITY_TOKEN_SYMBOL = 'Uniswap V2'
 
 export enum ChainId {
   MUMBAI = POLYGON_MUMBAI_TESTNET_CHAIN_ID,
   POLYGON = POLYGON_MAINNET_CHAIN_ID
 }
 
-export const ChainLabel: { [chainId in ChainId]: string } = {
+export const CHAIN_LABEL: { [chainId in ChainId]: string } = {
   [ChainId.MUMBAI]: 'Polygon Mumbai Testnet',
   [ChainId.POLYGON]: 'Polygon'
 }
 
-export const ChainExplorer: { [chainId in ChainId]: string } = {
+export const HEX_CHAIN_ID: { [chainId in ChainId]: string } = {
+  [ChainId.MUMBAI]: POLYGON_MUMBAI_TESTNET_HEX_CHAIN_ID,
+  [ChainId.POLYGON]: POLYGON_MAINNET_HEX_CHAIN_ID
+}
+
+export const CHAIN_EXPLORER: { [chainId in ChainId]: string } = {
   [ChainId.MUMBAI]: POLYGON_MUMBAI_TESTNET_DEFAULT_EXPLORER_URL,
   [ChainId.POLYGON]: POLYGON_MAINNET_DEFAULT_EXPLORER_URL
 }
@@ -48,13 +59,13 @@ export enum Rounding {
 }
 
 export const FACTORY_ADDRESS: { [chainId in ChainId]: string } = {
-  [ChainId.MUMBAI]: '0x15a34fd98dbf1c0116bdf740d501f735fca2891b', // TODO: update this !
-  [ChainId.POLYGON]: '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f' // Polygon mainnet Uniswap v2 factory
+  [ChainId.MUMBAI]: '0x15a34fd98dbf1c0116bdf740d501f735fca2891b', // Polygon Mumbai Testnet Uniswap v2 factory
+  [ChainId.POLYGON]: UNIV2_FACTORY_ADDRESS_MAP[ChainId.POLYGON] // Polygon mainnet Uniswap v2 factory
 }
 
 export const INIT_CODE_HASH: { [chainId in ChainId]: string } = {
   [ChainId.MUMBAI]: '0xce77f6bcd5997f0c469e2c41b88b633b4a59edecc2ff41ee9559c5e17484a70b', // TODO: update this !
-  [ChainId.POLYGON]: '0x81dbf51ab39dc634785936a3b34def28bf8007e6dfa30d4284c4b8547cb47a51' // TODO: update this !
+  [ChainId.POLYGON]: UNIV2_INIT_CODE_HASH
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
