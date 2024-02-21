@@ -6,7 +6,6 @@ import {
   FACTORY_ADDRESS as QUICKSWAP_UNI2_FACTORY_ADDRESS
 } from 'quickswap-v2-sdk' // '@uniswap/v2-sdk'
 
-
 // exports for external consumption
 export type BigintIsh = JSBI | bigint | string
 
