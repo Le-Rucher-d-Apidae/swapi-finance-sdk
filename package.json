@@ -30,11 +30,11 @@
   },
   "dependencies": {
     "@openzeppelin/cli": "^2.8.2",
-    "@uniswap/v2-sdk": "^4.1.0",
     "big.js": "^5.2.2",
     "decimal.js-light": "^2.5.0",
     "del-cli": "^5.1.0",
     "jsbi": "^3.1.4",
+    "quickswap-v2-sdk": "^2.0.0",
     "tiny-invariant": "^1.1.0",
     "tiny-warning": "^1.0.3",
     "toformat": "^2.0.0"

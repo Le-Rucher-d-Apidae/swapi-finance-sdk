@@ -1,8 +1,11 @@
 import JSBI from 'jsbi'
 import {
-  INIT_CODE_HASH as UNIV2_INIT_CODE_HASH,
+  // INIT_CODE_HASH as UNIV2_INIT_CODE_HASH,
+  INIT_CODE_HASH as QUICKSWAP_UNI2_INIT_CODE_HASH,
   // FACTORY_ADDRESS_MAP as UNIV2_FACTORY_ADDRESS_MAP
-} from '@uniswap/v2-sdk'
+  FACTORY_ADDRESS as QUICKSWAP_UNI2_FACTORY_ADDRESS
+} from 'quickswap-v2-sdk' // '@uniswap/v2-sdk'
+
 
 // exports for external consumption
 export type BigintIsh = JSBI | bigint | string
@@ -67,14 +70,13 @@ export enum Rounding {
 
 export const FACTORY_ADDRESS_MAP: { [chainId in ChainId]: string } = {
   [ChainId.MUMBAI]: '0x9163D5f39D1a8AB732F679ce62422ecf6E79bB6d', // Polygon Mumbai Testnet UniswapV2Factory address
-  // [ChainId.POLYGON]: UNIV2_FACTORY_ADDRESS_MAP[ChainId.POLYGON] // Polygon mainnet Uniswap v2 factory address
-  [ChainId.POLYGON]: '0x5757371414417b8C6CAad45bAeF941aBc7d3Ab32' // Polygon mainnet Quickswap v2 factory address
+  [ChainId.POLYGON]: QUICKSWAP_UNI2_FACTORY_ADDRESS // Polygon mainnet Quickswap (UniswapV2 based) factory address
   
 }
 
 export const INIT_CODE_HASH_MAP: { [chainId in ChainId]: string } = {
-  [ChainId.MUMBAI]: UNIV2_INIT_CODE_HASH, // '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f', // Polygon Mumbai Testnet UniswapV2FactoryTest init code hash
-  [ChainId.POLYGON]: UNIV2_INIT_CODE_HASH
+  [ChainId.MUMBAI]: '0xcbf346c7f49de34d678edea9fd74010be820789c7ab31de24ff690ef3237e6b9', // Polygon Mumbai Testnet UniswapV2Factory init code hash
+  [ChainId.POLYGON]: QUICKSWAP_UNI2_INIT_CODE_HASH // Polygon mainnet Quickswap (UniswapV2 based) factory init code hash
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
