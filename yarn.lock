@@ -2074,12 +2074,11 @@
   dependencies:
     antlr4ts "^0.5.0-alpha.4"
 
-"@swapi-finance/contracts@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@swapi-finance/contracts/-/contracts-0.0.3.tgz#a86ac576a691bf5219efd9940b041daf4d9ce8e7"
-  integrity sha512-NyTDtKBb2myUsiZAisn0w9vpljeCMk6SP3DM4LQYl+VNEoMJxdM5bgn+Pppe6TKzmoGqA6SeW8yCbyOLJIEL2Q==
+"@swapi-finance/contracts@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@swapi-finance/contracts/-/contracts-0.0.5.tgz#17a036d25dc0e21af6a8b6c92be8669f58c2dca2"
+  integrity sha512-Z0WI0tkesuDhzf1YhRD+V6AI90b3Dl/GeP8WROnFNn1nBZjXQBTeLJAWn1HrXYY+wbNB+5Vr2DnxZOus9EO8pg==
   dependencies:
-    "@uniswap/v2-core" "^1.0.1"
     abi-decoder "^2.4.0"
     base-58 "0.0.1"
 
