@@ -21,4 +21,4 @@ Yarn is available to install [here](https://classic.yarnpkg.com/en/docs/install/
 This project is available as an npm packege. Add to your project with `npm install @swapi-finance/sdk`
 
 ## Attribution
-This code was adapted from this baguette-exchange repo: [uniswap-sdk](https://github.com/baguette-exchange/sdk).
+This code was adapted from this baguette-exchange repo: [sdk](https://github.com/baguette-exchange/sdk).
