@@ -67,7 +67,7 @@ export enum Rounding {
 }
 
 export const FACTORY_ADDRESS_MAP: { [chainId in ChainId]: string } = {
-  [ChainId.MUMBAI]: '0x4D99adE0A4EFa9F476BFF8830DD71c2F90FcE095', // Polygon Mumbai Testnet UniswapV2Factory address
+  [ChainId.MUMBAI]: QUICKSWAP_UNI2_FACTORY_ADDRESS, // Polygon Mumbai Testnet UniswapV2Factory address
   [ChainId.POLYGON]: QUICKSWAP_UNI2_FACTORY_ADDRESS // Polygon mainnet Quickswap (UniswapV2 based) factory address
   
 }
