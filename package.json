@@ -1,7 +1,7 @@
 {
   "name": "@swapi-finance/sdk",
   "license": "MIT",
-  "version": "0.0.8",
+  "version": "0.0.21",
   "description": "🛠 An SDK for building applications on top of Swapi. 🐝",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -34,6 +34,7 @@
     "decimal.js-light": "^2.5.0",
     "del-cli": "^5.1.0",
     "jsbi": "^3.1.4",
+    "quickswap-v2-sdk": "^2.0.0",
     "tiny-invariant": "^1.1.0",
     "tiny-warning": "^1.0.3",
     "toformat": "^2.0.0"
@@ -48,7 +49,7 @@
     "@ethersproject/wallet": "^5.7.0"
   },
   "devDependencies": {
-    "@swapi-finance/contracts": "^0.0.1",
+    "@swapi-finance/contracts": "^0.0.6",
     "@types/big.js": "^4.0.5",
     "@types/jest": "^24.0.25",
     "babel-plugin-transform-jsbi-to-bigint": "^1.3.1",

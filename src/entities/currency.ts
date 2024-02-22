@@ -16,7 +16,6 @@ export class Currency {
   /**
    * The only instance of the base class `Currency`.
    */
-  // public static readonly CAVAX: Currency = new Currency(18, 'AVAX', 'Avalanche')
   public static readonly CMATIC: Currency = new Currency(18, 'MATIC', 'Polygon')
 
   /**
@@ -34,10 +33,6 @@ export class Currency {
   }
 }
 
-// const CAVAX = Currency.CAVAX
-// export { CAVAX }
-// const CMATIC = Currency.CMATIC
-// export { CMATIC }
 
 const CMATIC = Currency.CMATIC
 export { CMATIC as CURRENCY }

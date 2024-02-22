@@ -1,4 +1,10 @@
 import JSBI from 'jsbi'
+import {
+  // INIT_CODE_HASH as UNIV2_INIT_CODE_HASH,
+  INIT_CODE_HASH as QUICKSWAP_UNI2_INIT_CODE_HASH,
+  // FACTORY_ADDRESS_MAP as UNIV2_FACTORY_ADDRESS_MAP
+  FACTORY_ADDRESS as QUICKSWAP_UNI2_FACTORY_ADDRESS
+} from 'quickswap-v2-sdk' // '@uniswap/v2-sdk'
 
 // exports for external consumption
 export type BigintIsh = JSBI | bigint | string
@@ -6,7 +12,9 @@ export type BigintIsh = JSBI | bigint | string
 const POLYGON_MAINNET_CHAIN_ID = 137
 const POLYGON_MUMBAI_TESTNET_CHAIN_ID = 80001
 
-export const POLYGON_MAINNET_HEX_CHAIN_ID = '0x89' // 137 // keep it as string else 0x89 will be converted to 137 at build time
+// keep HEX_CHAIN_ID_MAP as string else it will be converted to int at build time
+const POLYGON_MUMBAI_TESTNET_HEX_CHAIN_ID_MAP = '0x13881' // 80001
+const POLYGON_MAINNET_HEX_CHAIN_ID_MAP = '0x89' // 137
 
 const POLYGON_MAINNET_DEFAULT_EXPLORER_URL = 'https://polygonscan.com/'
 const POLYGON_MUMBAI_TESTNET_DEFAULT_EXPLORER_URL = 'https://mumbai.polygonscan.com/'
@@ -15,27 +23,38 @@ const POLYGON_MAINNET_DEFAULT_RPC = 'https://polygon-rpc.com'
 const POLYGON_MUMBAI_TESTNET_DEFAULT_RPC = 'https://rpc-mumbai.maticvigil.com'
 
 export const LIQUIDITY_TOKEN_PRECISION = 18
-export const LIQUIDITY_TOKEN_NAME = 'Baguette Liquidity'
-export const LIQUIDITY_TOKEN_SYMBOL = 'BGL'
+export const LIQUIDITY_TOKEN_NAME = 'Uniswap V2'
+export const LIQUIDITY_TOKEN_SYMBOL = 'UNI-V2'
 
 export enum ChainId {
   MUMBAI = POLYGON_MUMBAI_TESTNET_CHAIN_ID,
   POLYGON = POLYGON_MAINNET_CHAIN_ID
 }
 
-export const ChainLabel: { [chainId in ChainId]: string } = {
+export const CHAIN_LABEL_MAP: { [chainId in ChainId]: string } = {
   [ChainId.MUMBAI]: 'Polygon Mumbai Testnet',
   [ChainId.POLYGON]: 'Polygon'
 }
 
-export const ChainExplorer: { [chainId in ChainId]: string } = {
+export const HEX_CHAIN_ID_MAP: { [chainId in ChainId]: string } = {
+  [ChainId.MUMBAI]: POLYGON_MUMBAI_TESTNET_HEX_CHAIN_ID_MAP,
+  [ChainId.POLYGON]: POLYGON_MAINNET_HEX_CHAIN_ID_MAP
+}
+
+export const CHAIN_EXPLORER_MAP: { [chainId in ChainId]: string } = {
   [ChainId.MUMBAI]: POLYGON_MUMBAI_TESTNET_DEFAULT_EXPLORER_URL,
   [ChainId.POLYGON]: POLYGON_MAINNET_DEFAULT_EXPLORER_URL
 }
-export const RPC_URL: { [chainId in ChainId]: string } = {
+export const RPC_URL_MAP: { [chainId in ChainId]: string } = {
   [ChainId.MUMBAI]: POLYGON_MUMBAI_TESTNET_DEFAULT_RPC,
   [ChainId.POLYGON]: POLYGON_MAINNET_DEFAULT_RPC
 }
+
+export const MULTICALL_NETWORKS_MAP: { [chainId in ChainId]: string } = {
+  [ChainId.MUMBAI]: '0xe9939e7Ea7D7fb619Ac57f648Da7B1D425832631',
+  [ChainId.POLYGON]: '0x275617327c958bD06b5D6b871E7f491D76113dd8'
+}
+
 export enum TradeType {
   EXACT_INPUT,
   EXACT_OUTPUT
@@ -47,14 +66,16 @@ export enum Rounding {
   ROUND_UP
 }
 
-export const FACTORY_ADDRESS: { [chainId in ChainId]: string } = {
-  [ChainId.MUMBAI]: '0x15a34fd98dbf1c0116bdf740d501f735fca2891b', // TODO: update this !
-  [ChainId.POLYGON]: '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f' // Polygon mainnet Uniswap v2 factory
+export const FACTORY_ADDRESS_MAP: { [chainId in ChainId]: string } = {
+  [ChainId.MUMBAI]: QUICKSWAP_UNI2_FACTORY_ADDRESS, // Polygon Mumbai Testnet UniswapV2Factory address
+  [ChainId.POLYGON]: QUICKSWAP_UNI2_FACTORY_ADDRESS // Polygon mainnet Quickswap (UniswapV2 based) factory address
+  
 }
 
-export const INIT_CODE_HASH: { [chainId in ChainId]: string } = {
-  [ChainId.MUMBAI]: '0xce77f6bcd5997f0c469e2c41b88b633b4a59edecc2ff41ee9559c5e17484a70b', // TODO: update this !
-  [ChainId.POLYGON]: '0x81dbf51ab39dc634785936a3b34def28bf8007e6dfa30d4284c4b8547cb47a51' // TODO: update this !
+export const INIT_CODE_HASH_MAP: { [chainId in ChainId]: string } = {
+  // [ChainId.MUMBAI]: '0xcbf346c7f49de34d678edea9fd74010be820789c7ab31de24ff690ef3237e6b9', // Polygon Mumbai Testnet UniswapV2Factory init code hash
+  [ChainId.MUMBAI]: QUICKSWAP_UNI2_INIT_CODE_HASH, // Polygon Mumbai Testnet UniswapV2Factory init code hash
+  [ChainId.POLYGON]: QUICKSWAP_UNI2_INIT_CODE_HASH // Polygon mainnet Quickswap (UniswapV2 based) factory init code hash
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
