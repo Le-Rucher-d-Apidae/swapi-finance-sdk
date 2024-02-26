@@ -26,14 +26,17 @@ export const LIQUIDITY_TOKEN_PRECISION = 18
 export const LIQUIDITY_TOKEN_NAME = 'Uniswap V2'
 export const LIQUIDITY_TOKEN_SYMBOL = 'UNI-V2'
 
+export const NETWORK_LABEL = 'Polygon'
+export const CURRENCY_LABEL = 'MATIC'
+
 export enum ChainId {
   MUMBAI = POLYGON_MUMBAI_TESTNET_CHAIN_ID,
   POLYGON = POLYGON_MAINNET_CHAIN_ID
 }
 
 export const CHAIN_LABEL_MAP: { [chainId in ChainId]: string } = {
-  [ChainId.MUMBAI]: 'Polygon Mumbai Testnet',
-  [ChainId.POLYGON]: 'Polygon'
+  [ChainId.MUMBAI]: NETWORK_LABEL + ' Mumbai Testnet',
+  [ChainId.POLYGON]: NETWORK_LABEL
 }
 
 export const HEX_CHAIN_ID_MAP: { [chainId in ChainId]: string } = {
