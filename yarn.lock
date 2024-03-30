@@ -2084,10 +2084,10 @@
   dependencies:
     antlr4ts "^0.5.0-alpha.4"
 
-"@swapi-finance/contracts@^0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@swapi-finance/contracts/-/contracts-0.0.7.tgz#e250ab350a40469bb93b1c79d1295e04ced4917d"
-  integrity sha512-tnGuAS2Io0P67Sni+Bp1+Y8ODA18JuKdc7ZoGiDkZ9mXnCkVFUo7gpQvWXHeFEEBCiWWwghSC5l1CIcXjluT8A==
+"@swapi-finance/contracts@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@swapi-finance/contracts/-/contracts-0.8.0.tgz#86f7485f337c73f7c41f34c9ccc682a9522ac54e"
+  integrity sha512-glPJPed72pm8Fu/0lhJziPUVPMojf2hjOQwAr9m0pur5G2CmsYKf5glVTW1l2DnVrQsk6RGIJEGjm4qsBkyjOw==
   dependencies:
     "@openzeppelin/contracts-3.4.1" "npm:@openzeppelin/contracts@3.4.1"
     "@openzeppelin/contracts-5.0.2" "npm:@openzeppelin/contracts@5.0.2"
