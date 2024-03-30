@@ -10,7 +10,7 @@ import UniswapV2Pair from '@swapi-finance/contracts/artifacts/contracts/Uniswap/
 import invariant from 'tiny-invariant'
 // import ERC20 from './abis/ERC20.json'
 // import { abi as ERC20} from '@uniswap/v2-core/build/IERC20.json'
-import { abi as ERC20} from '@swapi-finance/contracts/artifacts/contracts/Uniswap/v2-core/interfaces/IUniswapV2ERC20.sol/IUniswapV2ERC20.json'
+import { abi as ERC20 } from '@swapi-finance/contracts/artifacts/contracts/Uniswap/v2-core/interfaces/IUniswapV2ERC20.sol/IUniswapV2ERC20.json'
 
 import { ChainId } from './constants'
 import { Token } from './entities/token'

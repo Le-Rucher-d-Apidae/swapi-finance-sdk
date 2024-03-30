@@ -33,6 +33,5 @@ export class Currency {
   }
 }
 
-
 const CMATIC = Currency.CMATIC
 export { CMATIC as CURRENCY }
