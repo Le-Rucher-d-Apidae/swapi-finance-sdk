@@ -17,7 +17,8 @@ import {
   _1000,
   ChainId,
   LIQUIDITY_TOKEN_NAME,
-  LIQUIDITY_TOKEN_SYMBOL
+  LIQUIDITY_TOKEN_SYMBOL,
+  LIQUIDITY_TOKEN_PRECISION
 } from '../constants'
 import { sqrt, parseBigintIsh } from '../utils'
 import { InsufficientReservesError, InsufficientInputAmountError } from '../errors'
@@ -31,7 +32,6 @@ export class Pair {
 
   public static getAddress(tokenA: Token, tokenB: Token, chainId: ChainId): string {
     const tokens = tokenA.sortsBefore(tokenB) ? [tokenA, tokenB] : [tokenB, tokenA] // does safety checks
-    // debugger
     if (PAIR_ADDRESS_CACHE?.[tokens[0].address]?.[tokens[1].address] === undefined) {
       PAIR_ADDRESS_CACHE = {
         ...PAIR_ADDRESS_CACHE,
@@ -55,9 +55,7 @@ export class Pair {
     this.liquidityToken = new Token(
       tokenAmounts[0].token.chainId,
       Pair.getAddress(tokenAmounts[0].token, tokenAmounts[1].token, chainId),
-      18,
-      // 'AXP',
-      // 'avaXwap'
+      LIQUIDITY_TOKEN_PRECISION,
       LIQUIDITY_TOKEN_SYMBOL,
       LIQUIDITY_TOKEN_NAME
     )

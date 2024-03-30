@@ -1,7 +1,7 @@
 {
   "name": "@swapi-finance/sdk",
   "license": "MIT",
-  "version": "0.0.21",
+  "version": "0.26.0",
   "description": "🛠 An SDK for building applications on top of Swapi. 🐝",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -24,7 +24,10 @@
     "test": "tsdx test",
     "prepublishOnly": "tsdx build",
     "prepare": "tsdx build",
-    "clean": "del-cli dist",
+    "clean": "yarn run clean:dist",
+    "clean:dist": "del-cli dist",
+    "clean:node": "del-cli ./node_modules/",
+    "clean:all": "yarn run clean:dist && yarn run clean:node",
     "publish": "yarn publish --access public",
     "PUBLISH": "yarn run clean && yarn run build && yarn run publish"
   },
@@ -49,7 +52,7 @@
     "@ethersproject/wallet": "^5.7.0"
   },
   "devDependencies": {
-    "@swapi-finance/contracts": "^0.0.6",
+    "@swapi-finance/contracts": "^0.8.0",
     "@types/big.js": "^4.0.5",
     "@types/jest": "^24.0.25",
     "babel-plugin-transform-jsbi-to-bigint": "^1.3.1",

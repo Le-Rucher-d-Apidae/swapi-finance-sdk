@@ -2,7 +2,6 @@ import invariant from 'tiny-invariant'
 
 import { ChainId, ONE, TradeType, ZERO } from '../constants'
 import { sortedInsert } from '../utils'
-// import { Currency, CAVAX } from './currency'
 import { Currency, CURRENCY } from './currency'
 import { CurrencyAmount } from './fractions/currencyAmount'
 import { Fraction } from './fractions/fraction'
@@ -11,7 +10,6 @@ import { Price } from './fractions/price'
 import { TokenAmount } from './fractions/tokenAmount'
 import { Pair } from './pair'
 import { Route } from './route'
-// import { currencyEquals, Token, WAVAX } from './token'
 import { currencyEquals, Token, WCURRENCY } from './token'
 
 /**
@@ -91,16 +89,12 @@ export interface BestTradeOptions {
  */
 function wrappedAmount(currencyAmount: CurrencyAmount, chainId: ChainId): TokenAmount {
   if (currencyAmount instanceof TokenAmount) return currencyAmount
-  // if (currencyAmount.currency === CAVAX) return new TokenAmount(WAVAX[chainId], currencyAmount.raw)
-  // if (currencyAmount.currency === CAVAX) return new TokenAmount(WMATIC[chainId], currencyAmount.raw)
   if (currencyAmount.currency === CURRENCY) return new TokenAmount(WCURRENCY[chainId], currencyAmount.raw)
   invariant(false, 'CURRENCY')
 }
 
 function wrappedCurrency(currency: Currency, chainId: ChainId): Token {
   if (currency instanceof Token) return currency
-  // if (currency === CAVAX) return WAVAX[chainId]
-  // if (currency === CAVAX) return WMATIC[chainId]
   if (currency === CURRENCY) return WCURRENCY[chainId]
   invariant(false, 'CURRENCY')
 }
@@ -187,13 +181,13 @@ export class Trade {
     this.inputAmount =
       tradeType === TradeType.EXACT_INPUT
         ? amount
-        : route.input === CURRENCY // : route.input === CAVAX
+        : route.input === CURRENCY
         ? CurrencyAmount.ether(amounts[0].raw)
         : amounts[0]
     this.outputAmount =
       tradeType === TradeType.EXACT_OUTPUT
         ? amount
-        : route.output === CURRENCY // : route.output === CAVAX
+        : route.output === CURRENCY
         ? CurrencyAmount.ether(amounts[amounts.length - 1].raw)
         : amounts[amounts.length - 1]
     this.executionPrice = new Price(

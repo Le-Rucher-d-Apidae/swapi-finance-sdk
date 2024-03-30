@@ -1,9 +1,7 @@
 import { ChainId } from '../constants'
 import invariant from 'tiny-invariant'
 
-// import { Currency, CAVAX } from './currency'
 import { Currency, CURRENCY } from './currency'
-// import { Token, WAVAX } from './token'
 import { Token, WCURRENCY } from './token'
 import { Pair } from './pair'
 import { Price } from './fractions/price'

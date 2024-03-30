@@ -1,6 +1,6 @@
 import JSBI from 'jsbi'
 
-import { SolidityType } from '../constants'
+import { SolidityType, CURRENCY_LABEL, NETWORK_LABEL } from '../constants'
 import { validateSolidityTypeInstance } from '../utils'
 
 /**
@@ -16,7 +16,7 @@ export class Currency {
   /**
    * The only instance of the base class `Currency`.
    */
-  public static readonly CMATIC: Currency = new Currency(18, 'MATIC', 'Polygon')
+  public static readonly CMATIC: Currency = new Currency(18, CURRENCY_LABEL, NETWORK_LABEL)
 
   /**
    * Constructs an instance of the base class `Currency`. The only instance of the base class `Currency` is `Currency.ETHER`.
@@ -32,7 +32,6 @@ export class Currency {
     this.name = name
   }
 }
-
 
 const CMATIC = Currency.CMATIC
 export { CMATIC as CURRENCY }
