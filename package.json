@@ -24,7 +24,10 @@
     "test": "tsdx test",
     "prepublishOnly": "tsdx build",
     "prepare": "tsdx build",
-    "clean": "del-cli dist",
+    "clean": "yarn run clean:dist",
+    "clean:dist": "del-cli dist",
+    "clean:node": "del-cli ./node_modules/",
+    "clean:all": "yarn run clean:dist && yarn run clean:node",
     "publish": "yarn publish --access public",
     "PUBLISH": "yarn run clean && yarn run build && yarn run publish"
   },
