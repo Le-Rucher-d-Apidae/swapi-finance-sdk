@@ -56,45 +56,6 @@ export function currencyEquals(currencyA: Currency, currencyB: Currency): boolea
   }
 }
 
-// export const WAVAX = {
-//   [ChainId.FUJI]: new Token(ChainId.FUJI,'0xd00ae08403B9bbb9124bB305C09058E32C39A48c',18,'WAVAX','Wrapped AVAX'),
-//   [ChainId.AVALANCHE]: new Token(ChainId.AVALANCHE,'0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',18,'WAVAX','Wrapped AVAX'),
-//   [ChainId.CRYPTOSEALS]: new Token(ChainId.CRYPTOSEALS,'0x2b601C1FA15750045bf776632Da53166782016b0',18,'WCSHP','Wrapped CSHP'),
-// }
-// export const WAVAX = {
-//   [ChainId.MUMBAI]: new Token(
-//     ChainId.MUMBAI,
-//     '0xd00ae08403B9bbb9124bB305C09058E32C39A48c',
-//     18,
-//     'WAVAX',
-//     'Wrapped AVAX'
-//   ),
-//   [ChainId.POLYGON]: new Token(
-//     ChainId.POLYGON,
-//     '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7',
-//     18,
-//     'WAVAX',
-//     'Wrapped AVAX'
-//   )
-// }
-
-// export const WMATIC = {
-//   [ChainId.MUMBAI]: new Token(
-//     ChainId.MUMBAI,
-//     '0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889', // WMATIC
-//     18,
-//     'WMATIC',
-//     'Wrapped MATIC'
-//   ),
-//   [ChainId.POLYGON]: new Token(
-//     ChainId.POLYGON,
-//     '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
-//     18,
-//     'WMATIC',
-//     'Wrapped MATIC' // WMATIC
-//   )
-// }
-
 export const WCURRENCY = {
   [ChainId.MUMBAI]: new Token(
     ChainId.MUMBAI,

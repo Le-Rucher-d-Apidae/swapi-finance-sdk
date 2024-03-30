@@ -1,7 +1,6 @@
 import { TradeType } from './constants'
 import invariant from 'tiny-invariant'
 import { validateAndParseAddress } from './utils'
-// import { CurrencyAmount, CETH, Percent, Trade } from './entities'
 import { CurrencyAmount, CURRENCY, Percent, Trade } from './entities'
 
 /**
