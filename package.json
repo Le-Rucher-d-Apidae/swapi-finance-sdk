@@ -52,7 +52,7 @@
     "@ethersproject/wallet": "^5.7.0"
   },
   "devDependencies": {
-    "@swapi-finance/contracts": "^0.8.0",
+    "@swapi-finance/contracts": "^0.8.1",
     "@types/big.js": "^4.0.5",
     "@types/jest": "^24.0.25",
     "babel-plugin-transform-jsbi-to-bigint": "^1.3.1",
