@@ -1,7 +1,7 @@
 {
   "name": "@swapi-finance/sdk",
   "license": "MIT",
-  "version": "0.26.4",
+  "version": "0.26.5",
   "description": "🛠 An SDK for building applications on top of Swapi. 🐝",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@openzeppelin/cli": "^2.8.2",
-    "@swapi-finance/contracts": "^0.8.4",
+    "@swapi-finance/contracts": "^0.8.5",
     "big.js": "^5.2.2",
     "decimal.js-light": "^2.5.0",
     "del-cli": "^5.1.0",
