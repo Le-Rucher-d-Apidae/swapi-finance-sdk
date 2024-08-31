@@ -1,5 +1,5 @@
 import invariant from 'tiny-invariant'
-import { ChainId } from '../constants'
+import { ChainId, CURRENCY_LABEL } from '../constants'
 import { validateAndParseAddress } from '../utils'
 import { Currency } from './currency'
 
@@ -61,14 +61,14 @@ export const WCURRENCY = {
     ChainId.MUMBAI,
     '0x9c3C9283D3e44854697Cd22D3Faa240Cfb032889', // WMATIC
     18,
-    'WMATIC',
-    'Wrapped MATIC'
+    `W${CURRENCY_LABEL}`,
+    `Wrapped ${CURRENCY_LABEL}`
   ),
   [ChainId.POLYGON]: new Token(
     ChainId.POLYGON,
     '0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270',
     18,
-    'WMATIC',
-    'Wrapped MATIC' // WMATIC
+    `W${CURRENCY_LABEL}`,
+    `Wrapped ${CURRENCY_LABEL}`
   )
 }

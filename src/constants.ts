@@ -27,7 +27,7 @@ export const LIQUIDITY_TOKEN_NAME = 'Uniswap V2'
 export const LIQUIDITY_TOKEN_SYMBOL = 'UNI-V2'
 
 export const NETWORK_LABEL = 'Polygon'
-export const CURRENCY_LABEL = 'MATIC'
+export const CURRENCY_LABEL = 'MATIC' // soon to be replaced by POL
 
 export enum ChainId {
   MUMBAI = POLYGON_MUMBAI_TESTNET_CHAIN_ID,
