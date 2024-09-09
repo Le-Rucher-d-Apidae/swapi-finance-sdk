@@ -10,7 +10,7 @@ import {
 export type BigintIsh = JSBI | bigint | string
 
 const POLYGON_MAINNET_CHAIN_ID = 137
-const POLYGON_MUMBAI_TESTNET_CHAIN_ID = 80001
+const POLYGON_MUMBAI_TESTNET_CHAIN_ID = 80001 // Now deprecated
 
 // keep HEX_CHAIN_ID_MAP as string else it will be converted to int at build time
 const POLYGON_MUMBAI_TESTNET_HEX_CHAIN_ID_MAP = '0x13881' // 80001
@@ -27,7 +27,7 @@ export const LIQUIDITY_TOKEN_NAME = 'Uniswap V2'
 export const LIQUIDITY_TOKEN_SYMBOL = 'UNI-V2'
 
 export const NETWORK_LABEL = 'Polygon'
-export const CURRENCY_LABEL = 'MATIC' // soon to be replaced by POL
+export const CURRENCY_LABEL = 'POL' // previously 'MATIC'
 
 export enum ChainId {
   MUMBAI = POLYGON_MUMBAI_TESTNET_CHAIN_ID,
