@@ -1,7 +1,7 @@
 {
   "name": "@swapi-finance/sdk",
   "license": "MIT",
-  "version": "0.26.9",
+  "version": "0.26.11",
   "description": "🛠 An SDK for building applications on top of Swapi. 🐝",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -28,8 +28,8 @@
     "clean:dist": "del-cli dist",
     "clean:node": "del-cli ./node_modules/",
     "clean:all": "yarn run clean:dist && yarn run clean:node",
-    "publish": "yarn publish --access public",
-    "PUBLISH": "yarn run clean && yarn run build && yarn run publish"
+    "PUBLISH": "yarn publish --access public",
+    "PUBLISH:clean": "yarn run clean && yarn run build && yarn run PUBLISH"
   },
   "dependencies": {
     "@openzeppelin/cli": "^2.8.2",
